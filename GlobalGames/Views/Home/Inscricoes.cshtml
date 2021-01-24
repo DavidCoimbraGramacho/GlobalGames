@@ -1,4 +1,4 @@
-﻿@model GlobalGames.Dados.Entidades.Inscricoes
+﻿@model GlobalGames.Models.InscricoesViewModel
 
 @{
     ViewData["Title"] = "Inscricoes";
@@ -10,7 +10,7 @@
 <hr />
 <div class="row dark">
     <div class="col-md-4">
-        <form asp-controller="Inscricoes" asp-action="Create" class="Inscrito">
+        <form asp-action="Inscricoes" class="Inscrito" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
@@ -41,6 +41,11 @@
                 <label asp-for="DataNascimento" class="control-label"></label>
                 <input asp-for="DataNascimento" class="form-control" />
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" class="form-control" type="file" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input id="botao" type="submit" value="enviar" class="button_1" />
